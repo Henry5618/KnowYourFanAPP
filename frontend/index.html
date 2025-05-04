@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Know Your Fan - Coleta de Dados</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Know Your Fan - Perfil do Torcedor</h1>
+
+    <div class="container">
+        <section id="basic-info-section">
+            <h2>Informações Básicas</h2>
+            <form id="basic-info-form">
+                <label for="cpf">CPF:*</label>
+                <div class="cpf-container">
+                    <input type="text" id="cpf" name="cpf" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="CPF no formato XXX.XXX.XXX-XX" maxlength="14" placeholder="Digite apenas números">
+                    <button type="button" id="load-user-btn">Carregar Dados por CPF</button>
+                </div>
+                <p id="load-user-status"></p>
+
+                <label for="email">E-mail:*</label>
+                <input type="email" id="email" name="email" required placeholder="seuemail@exemplo.com">
+
+                <input type="hidden" id="user-id" name="user-id">
+
+                <label for="name">Nome Completo:*</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="address">Endereço:</label>
+                <input type="text" id="address" name="address">
+
+                <label for="interests">Interesses (separados por vírgula):</label>
+                <input type="text" id="interests" name="interests" placeholder="Ex: CS2, FURIA, VCT Americas, Skins">
+
+                <label for="activities">Atividades Relacionadas (último ano):</label>
+                <textarea id="activities" name="activities" rows="3" placeholder="Ex: Assisto campeonatos toda semana, jogo Valorant casualmente..."></textarea>
+
+                <label for="events">Eventos que Participou (separados por vírgula):</label>
+                <input type="text" id="events" name="events_attended" placeholder="Ex: IEM Rio Major 2022, Watch Party FURIA">
+
+                <label for="purchases">Compras Relacionadas (separadas por vírgula):</label>
+                <input type="text" id="purchases" name="purchases" placeholder="Ex: Camisa FURIA, Ingresso Major, Mouse Gamer">
+
+                <button type="submit">Salvar Informações Básicas</button>
+                <p id="basic-info-status"></p>
+            </form>
+        </section>
+
+        <section id="id-validation-section" class="hidden">
+            <h2>Validação de Identidade (AI Simulada)</h2>
+            <div>
+                <label for="id_document">Upload Documento (ID/CNH - .jpg, .png, .pdf):</label>
+                <input type="file" id="id_document" name="id_document" accept=".png, .jpg, .jpeg, .pdf">
+                <button type="button" id="upload-doc-btn">Enviar Documento</button>
+                <p id="id-upload-status"></p>
+            </div>
+            <button type="button" id="validate-id-btn" disabled>Validar ID (Simular AI)</button>
+            <p id="id-validation-status"></p>
+        </section>
+
+        <section id="social-media-section" class="hidden">
+            <h2>Redes Sociais e Análise (AI Simulada)</h2>
+            <form id="social-links-form">
+                <label for="twitter">Twitter Handle/Link:</label>
+                <input type="url" id="twitter" name="twitter" placeholder="https://twitter.com/...">
+
+                <label for="twitch">Twitch Channel:</label>
+                <input type="url" id="twitch" name="twitch" placeholder="https://www.twitch.tv/...">
+
+                <label for="instagram">Instagram Profile:</label>
+                <input type="url" id="instagram" name="instagram" placeholder="https://www.instagram.com/...">
+
+                <button type="submit">Salvar Links Sociais</button>
+                <p id="social-link-status"></p>
+            </form>
+            <button id="analyze-social-btn" disabled>Analisar Atividade Social (Simular AI)</button>
+            <div id="social-analysis-result"></div>
+        </section>
+
+        <section id="esports-profile-section" class="hidden">
+            <h2>Perfis em Sites de E-sports e Análise (AI Simulada)</h2>
+            <form id="esports-profile-form">
+                <label for="hltv">Perfil HLTV.org:</label>
+                <input type="url" id="hltv" name="HLTV" placeholder="https://www.hltv.org/player/...">
+
+                <label for="vlr">Perfil VLR.gg:</label>
+                <input type="url" id="vlr" name="VLR" placeholder="https://www.vlr.gg/player/...">
+
+                <label for="liquipedia">Página Liquipedia (Jogador/Time):</label>
+                <input type="url" id="liquipedia" name="Liquipedia" placeholder="https://liquipedia.net/counterstrike/...">
+
+                <button type="submit">Salvar Links de Perfis</button>
+                <p id="esports-link-status"></p>
+            </form>
+            <button id="validate-profile-btn" disabled>Validar Relevância Perfis (Simular AI)</button>
+            <div id="profile-relevance-result"></div>
+        </section>
+
+        <section id="summary-section" class="hidden">
+            <h2>Resumo do Perfil</h2>
+            <div id="user-summary"></div>
+        </section>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/main.js" defer></script>
+</body>
+</html>
