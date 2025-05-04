@@ -1,0 +1,41 @@
+# --- Python ---
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment (localizado dentro de backend)
+backend/venv/
+
+# Flask instance folder (contém DB e Uploads neste projeto)
+backend/instance/
+
+# Arquivos de banco de dados SQLite (se criados fora da instance)
+*.sqlite3
+*.db
+
+# Arquivos de ambiente (para segredos)
+.env
+.env.*
+
+# Arquivos de log
+*.log
+
+# --- Sistema Operacional ---
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# --- IDEs / Editores ---
+# VSCode
+.vscode/
+
+# PyCharm
+.idea/
+
+# --- Outros ---
+# Arquivos temporários
+*.swp
+*.tmp
