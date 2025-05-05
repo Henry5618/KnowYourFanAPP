@@ -29,7 +29,9 @@ def create_app():
         print(f"APP: ERRO CRÍTICO ao criar diretórios instance/uploads: {e}")
 
     db.init_app(app)
-    CORS(app)
+
+    frontend_url = "https://knowyourfanapp-1.onrender.com"
+    CORS(app, origins=[frontend_url], supports_credentials=True)
 
     with app.app_context():
         from . import models
