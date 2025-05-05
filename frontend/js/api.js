@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://knowyourfanapp.onrender.com';
+const API_BASE_URL = 'https://knowyourfanapp.onrender.com/api';
 
 async function fetchAPI(endpoint, method = 'GET', body = null, isFormData = false) {
     const url = `${API_BASE_URL}${endpoint}`;
