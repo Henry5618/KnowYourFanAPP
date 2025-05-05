@@ -3,9 +3,9 @@ Flask-SQLAlchemy>=2.5
 Flask-CORS>=3.0
 requests>=2.25
 beautifulsoup4>=4.9
-# Para simulação de OCR (opcional, requer instalação do Tesseract OCR no sistema)
-# pytesseract>=0.3
-# Pillow>=8.0
-# Para simulação de análise de texto (opcional)
-# nltk>=3.6
-# spacy>=3.0  # Pode ser pesado, NLTK pode ser mais simples para começar
+Flask>=2.0
+Flask-SQLAlchemy>=2.5
+Flask-CORS>=3.0
+requests>=2.25
+beautifulsoup4>=4.9
+gunicorn
